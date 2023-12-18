@@ -4,6 +4,11 @@ import { fetchUsers, fetchTeams } from '../../api';
 import { generateDataForUsersTable, filterDataForUsersTable } from '../../utils';
 import { RowUserData } from '../UsersTable/UsersTable.types';
 
+/*
+  TODO: instead of keeping UsersFilter and UsersTable states in the parent component
+        we could add context in app using Redux Toolkit, MobX or Valtio.
+*/
+
 export const useUsersLayoutLogic = () => {
   const [filterValue, setFilterValue] = useState('');
   const [usersTableData, setUsersTableData] = useState<Array<RowUserData>>([]);
